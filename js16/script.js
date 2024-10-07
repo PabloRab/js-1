@@ -133,22 +133,94 @@
 
 // }
 
-class User{
-    #email;
-    constructor(email) {
-        this.#email = email;
-    }
-    get email() {
-        return this.#email;
-    }
-    set email(newEmail) {
-        this.#email = newEmail;
-    }
-}
+// class User{
+//     #email;
+//     constructor(email) {
+//         this.#email = email;
+//     }
+//     get email() {
+//         return this.#email;
+//     }
+//     set email(newEmail) {
+//         this.#email = newEmail;
+//     }
+// }
 
-class Admin extends user{
-    //
+// class Admin extends user{
+//     //
+// }
+// const Admin = new Admin('admin@ukr.net');
+// console.log(admin);
+// console.log(admin.email);
+
+// class User{
+//     #email;
+//     constructor(email) {
+//         this.#email = email;
+//     }
+
+//     get email() {
+//         return this.#email;
+//     }
+
+//     set email(newEmail) {
+//         this.#email = newEmail;
+//     }
+// }
+
+// class Admin extends User{
+// constructor({email, posts}) {
+//     super(email);
+//     this.posts = posts;
+// }
+// addPost(post) {
+//     this.posts.push(post)
+// }
+// }
+
+// const admin = new Admin({email: 'admin@ukr.net', posts: []});
+// console.log(admin); //Admin {#email: 'admin@urkr.net'}
+// // console.log(admin.email);
+// admin.addPost('Новий пост');
+// admin.addPost('Новий пост 2');
+// console.log(admin.posts);
+
+
+// class Product {
+//     constructor(name, price, discount) {
+//         this.name = name;
+//         this.price = price;
+//         this.discount = discount;
+//     }
+//     getDiscountPrice(){
+//         if(this.discount > 0 ) {
+//             return this.price - (this.price * this.discount / 100);
+//         }
+//         return this.price;
+//     }
+// }
+// const product1 = new Product('Phone', 500, 10);
+// console.log(product1.getDiscountPrice()); // 450
+
+
+class Shape {
+    constructor(color) {
+        this.color = color;
+    }
+    draw(){
+        console.log('drowing a shape');
+    }
 }
-const Admin = new Admin('admin@ukr.net');
-console.log(admin);
-console.log(admin.email);
+class Circle extends Shape {
+    constructor(color, radius){
+        super(color);
+        this.radius = radius;
+        
+    }
+    draw(){
+        console.log(`drowing a circle whis radius ${this.radius}`)
+    }
+}
+const myCircle = new Circle('red', 5);
+myCircle.draw(); // Drawing a circle with radius 5
+console.log(myCircle.color); // "red"
